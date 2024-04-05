@@ -1,0 +1,17 @@
+
+    <h1>Search Results</h1><br>
+    <table border="1">
+        <tr>
+        <th>S.No</th><th>uuid</th><th>country</th><th>state name</th>
+        </tr>
+        {% for object in object_list %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{object.state_uuid}}</td>
+            <td>{{object.country}}</td>
+            <td>{{object.state_name}}</td>
+            <td><a href="{% url 'state_update' object.id %}" type="button">update</a></td>
+            <td><a href="{% url 'state_delete' object.id %}" type="button">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
